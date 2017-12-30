@@ -1,0 +1,5 @@
+php_flag engine off
+#ErrorDocument 404 http://img.test.local/404.html
+RewriteEngine On
+RewriteBase /
+RewriteRule ^([a-z]{1})([0-9a-z.]+)$ http://img.test.local/goods/$1/$1$2

@@ -1,0 +1,2 @@
+DirectoryIndex index index.html index.php
+ErrorDocument 404 http://img.test.local/404.html
