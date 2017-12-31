@@ -69,8 +69,11 @@ function AlmostMaxNumber($array)
 
 do {
     $max = AlmostMaxNumber($array_combine);
-    echo $max['a'] . ' ' . $max['b'] . ' ' . $max['c'] . '<br>';
+    //echo $max['a'] . ' ' . $max['b'] . ' ' . $max['c'] . '<br>';
 } while (0);
+
+echo 'размеры трапеции, у которой максимальная площадь, но не больше 1400';
+var_dump(AlmostMaxNumber($array_combine));
 
 /**
  * @param $o
@@ -84,26 +87,6 @@ function powww($o, $s)
         $r = $r * $o;
     }
     return $r;
-}
-
-/**
- * @param $arr
- * @return int|string
- */
-function MinNumber($arr)
-{
-    $min = 0;
-    for ($i = 0; $i < count($arr); $i++) {
-        foreach ($arr[$i] as $key => $val) {
-            if (is_numeric($val) && $min == 0) {
-                $min = $val;
-            }
-            if (is_numeric($val) && $val < $min) {
-                $min = $val;
-            }
-        }
-    }
-    return $min;
 }
 
 /**
@@ -146,7 +129,6 @@ function raschet($a, $b, $c)
     $f = $first + $final;
 
     return $f;
-
 }
 
 foreach ($array_combine as $key => $value) {
@@ -161,7 +143,53 @@ for ($i = 0; $i < count($array_combine); $i++) {
         $array_combine[$i]['s'] &= $array_combine[$i]['s'];
 
     }
-
 }
 
-?>
+
+echo '<table border="1">';
+echo '<tr>';
+echo '<th>a</th>';
+echo '<th>b</th>';
+echo '<th>c</th>';
+echo '<th>площадь трапеции</th>';
+echo '<th>результат формулы F</th>';
+echo '</tr>';
+
+for ($i = 0; $i<count($array_combine); $i++) {
+        echo '<tr>';
+        echo '<td>' . $array_combine[$i]['a'] . '</td>';
+        echo '<td>' . $array_combine[$i]['b'] . '</td>';
+        echo '<td>' . $array_combine[$i]['c'] . '</td>';
+        echo '<td>' . $array_combine[$i]['s'] . '</td>';
+        echo '<td>' . $array_combine[$i]['f'] . '</td>';
+        echo '</tr>';
+}
+echo '</table>';
+
+//----------------------
+echo '<br>';
+
+echo '<table border="1">';
+echo '<tr>';
+echo '<th>a</th>';
+echo '<th>b</th>';
+echo '<th>c</th>';
+echo '<th>площадь трапеции</th>';
+echo '<th>результат формулы F</th>';
+echo '</tr>';
+
+for ($i = 0; $i<count($array_combine); $i++) {
+       if (($array_combine[$i]['s'] % 2) == 1) {
+    echo '<tr>';
+    echo '<td>' . $array_combine[$i]['a'] . '</td>';
+    echo '<td>' . $array_combine[$i]['b'] . '</td>';
+    echo '<td>' . $array_combine[$i]['c'] . '</td>';
+    echo '<td>' . $array_combine[$i]['s'] . '</td>';
+    echo '<td>' . $array_combine[$i]['f'] . '</td>';
+    echo '</tr>';
+     }
+}
+echo '</table>';
+
+
+

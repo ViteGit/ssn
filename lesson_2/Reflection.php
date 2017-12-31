@@ -33,7 +33,7 @@ class Reflect extends Help
 
     public function table ()
     {
-        $reflectionClass = new ReflectionClass(Reflect);
+        $reflectionClass = new ReflectionClass('Reflect');
         $arr = $reflectionClass->getProperty('array')->getValue();
 
 

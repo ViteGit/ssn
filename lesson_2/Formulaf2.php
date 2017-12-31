@@ -11,7 +11,7 @@ class Formulaf2 extends help
 {
     public static $f2 = [];
 
-    public function getf($a, $b, $c)
+    public static function getf($a, $b, $c)
     {
         $xuis = new self();
 
