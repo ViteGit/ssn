@@ -166,7 +166,6 @@ for ($i = 0; $i<count($array_combine); $i++) {
 }
 echo '</table>';
 
-//----------------------
 echo '<br>';
 
 echo '<table border="1">';
