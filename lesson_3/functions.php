@@ -9,7 +9,7 @@
 $str = "abcdbcebcab";
 $substr = "ab";
 
-function revdsstr($str, $substr)
+function revstr($str, $substr)
 {
     $del = "~($substr)~";
     $arr = preg_split($del, $str, -1, PREG_SPLIT_DELIM_CAPTURE);
@@ -29,4 +29,4 @@ function revdsstr($str, $substr)
 }
 
 
-echo revdsstr($str, $substr);
+echo revstr($str, $substr);
