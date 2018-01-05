@@ -46,9 +46,6 @@ function revstr($str, $substr)
     return $res;
 }
 
-//echo revstr($str, $substr);
-
-
 $array = [['a' => 3], ['a' => 2, 'b' => 8], ['a' => 1, 'b' => 2], ['a' => 99, 'b' => 80], ['a' => 90, 'b' => 1]];
 
 
@@ -73,5 +70,3 @@ function customMultiSort($array, $param, $field)
 }
 
 $ar = customMultiSort($array, SORT_DESC, 'a');
-
-//debug($ar);
