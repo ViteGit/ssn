@@ -6,6 +6,9 @@
  * Time: 0:11
  */
 
+//include 'baseException.php';
+
+
 /**
  * @param $arr
  */
@@ -19,7 +22,6 @@ function debug($arr)
 
 $str = "abcdbcebcab";
 $substr = "ab";
-
 
 /**
  * @param $str
@@ -58,6 +60,9 @@ $array = [['a' => 3], ['a' => 2, 'b' => 8], ['a' => 1, 'b' => 2], ['a' => 99, 'b
 
 function customMultiSort($array, $param, $field)
 {
+    if ($field !== 'a' && $field !== 'b') {
+        throw new Exception('Неверное значение аргумента');
+    }
 
     $tmp_arr = array();
     foreach ($array as $key => $val) {
@@ -69,4 +74,24 @@ function customMultiSort($array, $param, $field)
     return $array;
 }
 
-$ar = customMultiSort($array, SORT_DESC, 'a');
+//$ar = customMultiSort($array, SORT_DESC, 'd');
+
+
+try {
+    $ar = customMultiSort($array, SORT_DESC, 'b');
+} catch (Exception $e) {
+    echo 'Неправильное значение аргумента, допустимые значения: a | b';
+}
+
+
+var_dump($ar);
+
+echo '<pre>';
+var_export($ar);
+echo '</pre>';
+
+debug($ar);
+
+
+
+

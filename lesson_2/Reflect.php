@@ -11,33 +11,38 @@
 /**
  * Class Reflect
  */
-class Reflect extends Help
+class Reflect extends Chelp
 {
-    public static $array;
+    public $array;
 
     public function init ()
     {
-        self::$array = Simplenum::prost(10, 53);
+        $simples = [];
+        $simples = $this->prost(11, 53);
+        $simples = $this->megamassive($simples);
 
-        foreach (self::$array as $key => $val) {
-            $s = Plochad::plotrap($val['a'], $val['b'], $val['c']);
-            $f1 = Formulaf::getf($val['a'], $val['b'], $val['c']);
-            $f2 = Formulaf2::getf($val['a'], $val['b'], $val['c']);
-            self::$array[$key]['s'] = $s;
-            self::$array[$key]['f1'] = $f1;
-            self::$array[$key]['f2'] = $f2;
+        $this->array = $simples;
+
+        $form1 = new Formulaf;
+        $form2 = new Formulaf2;
+
+        foreach ($this->array as $key => $val) {
+            $s = $this->plotrap($val['a'], $val['b'], $val['c']);
+            $f1 = $form1->getf($val['a'], $val['b'], $val['c']);
+            $f2 = $form2->getf($val['a'], $val['b'], $val['c']);
+            $this->array[$key]['s'] = $s;
+            $this->array[$key]['f1'] = $f1;
+            $this->array[$key]['f2'] = $f2;
         }
-        return  self::$array;
+        return  $this->array;
     }
 
 
     public function table ()
     {
-        $reflectionClass = new ReflectionClass('Reflect');
-        $arr = $reflectionClass->getProperty('array')->getValue();
+        $arr = $this->array;
 
-
-echo '<table border="1">';
+        echo '<table border="1">';
 echo '<tr>';
 echo '<th>a</th>';
 echo '<th>b</th>';

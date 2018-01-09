@@ -7,22 +7,23 @@
  * Time: 13:51
  */
 
-class Formulaf2 extends help
+class Formulaf2 extends Chelp
 {
-    public static $f2 = [];
+    public $f2 = [];
 
-    public static function getf($a, $b, $c)
+    public function getf($a, $b, $c)
     {
-        $xuis = new self();
-
-        $ab = $a + $b;
-        $abc = $xuis->stepen($ab, $c);
+       // $xuis = new self();
+        $abc = $this->stepen($a + $b, $c);
         $ac = $a / $c;
         $abcac = $abc * $ac;
-        $abc_min = $xuis->min($a, $b, $c);
-        self::$f2 = $xuis->stepen($abcac, $abc_min);
 
-        return self::$f2;
+        $arr = [$a, $b, $c];
+        $abc_min = $this->custom_min($arr);
+
+        $this->f2 = $this->stepen($abcac, $abc_min);
+
+        return $this->f2;
     }
 
 }

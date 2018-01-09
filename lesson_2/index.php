@@ -1,15 +1,16 @@
 <?php
 
-include 'helpclass.php';
-include 'Plochad.php';
+include 'Chelp.php';
 include 'Formulaf.php';
 include 'Formulaf2.php';
-include 'Simplenum.php';
-include 'Reflection.php';
+include 'Reflect.php';
 
 $test = new Reflect;
 $test->init();
 $test->table();
+
+
 ?>
+
 
 

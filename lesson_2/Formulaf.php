@@ -7,27 +7,28 @@
  * Time: 13:50
  */
 
-class Formulaf extends help
+class Formulaf extends Chelp
 {
-    public static $f = [];
+    public $f = [];
 
-    public static function getf($a, $b, $c)
+    public function getf($a, $b, $c)
     {
-        $xuis = new self();
+        $first = $this->stepen($a * $b, $c);
 
-        $ab = $a * $b;
-        $first = $xuis->stepen($ab, $c);
-
-        $ac = $a / $c;
-        $second = $xuis->stepen($ac, $b);
+        $second = $this->stepen($a / $c, $b);
         $res = $second % 3;
 
-        $min = min($a, $b, $c);
-        $final = $xuis->stepen($res, $min);
+        $arr = [$a, $b, $c];
+        $min = $this->custom_min($arr);
+        $final = $this->stepen($res, $min);
 
-        self::$f = $first + $final;
+        $this->f = $first + $final;
 
-        return self::$f;
+        return $this->f;
+
+
     }
+
+
 
 }
