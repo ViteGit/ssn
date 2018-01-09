@@ -19,7 +19,6 @@ function debug($arr)
     echo "</pre>";
 }
 
-
 $str = "abcdbcebcab";
 $substr = "ab";
 
