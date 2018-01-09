@@ -26,9 +26,5 @@ class Formulaf extends Chelp
 
         return $this->f;
 
-
     }
-
-
-
 }

@@ -13,7 +13,6 @@ class Formulaf2 extends Chelp
 
     public function getf($a, $b, $c)
     {
-       // $xuis = new self();
         $abc = $this->stepen($a + $b, $c);
         $ac = $a / $c;
         $abcac = $abc * $ac;
